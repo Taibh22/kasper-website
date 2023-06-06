@@ -1,0 +1,251 @@
+:root {
+    --main-color: #19c8fa;
+    --transperant-color:rgb(15 116 143 / 70%);
+}
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: black;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  /* Medium */
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  /* Large */
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+
+  header {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+  }
+
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 97px;
+  }
+
+  header .container::after {
+    content: "";
+    width: calc(100% - 30px);
+    height: 1px;
+    position: absolute;
+    background-color: #a2a2a2;
+    bottom: 0;
+    left: 15px;
+  }
+
+  header .container .logo {
+    height: 40px;
+  }
+
+  header .container nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  header .container nav .toggle-menu {
+    color: #a2a2a2;
+    font-size: 20px;
+  }
+
+  @media (min-width: 768px) {
+    header nav .toggle-menu {
+        display: none;
+      }
+  }
+
+  header .container nav ul {
+    display: flex;
+  }
+
+  header .container nav ul  li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+    padding: 35px 15px;
+  }
+
+  header .container nav ul li a.active ,
+  header .container nav ul li a:hover {
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color) ;
+    z-index: 1;
+  }
+
+  @media (max-width: 767px) {
+    header .container nav ul {
+      display: none;
+    }
+}
+
+header .container nav .toggle-menu:hover + ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgb(0 0 0 / 50%);
+  }
+
+  header .container .form {
+    width: 40px;
+    height: 30px;
+    position: relative;
+    margin-left: 30px;
+    border-left: 2px solid #333;
+  }
+
+  header .container .form i {
+    color: #a2a2a2;
+    position: absolute;
+    font-size: 20px;
+    top:50%;
+    transform: translate(50%,-50%);
+  }
+   .landing {
+    background-image: url(../images/landing.jpg);
+    min-height: 100vh;
+    background-size: cover;
+    background-color: #1f2021;
+    position: relative;
+   }
+
+   .landing .overlay {
+    position: absolute;
+    background-color: rgb(0  0  0 / 70%);
+    width: 100%;
+     height: 100%;
+   }
+
+   .landing .overlay .text {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--transperant-color);
+    width: 60%;
+    padding: 50px;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+   }
+
+   @media (max-width:767px) {
+    .landing .overlay .text {
+        width: 100%;
+    }
+    
+   }
+   .landing .overlay .text .content {
+    width: 500px;
+   }
+
+   .landing .overlay .text .content h2 {
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 20px;
+
+   }
+
+   
+   @media (max-width:767px) {
+    .landing .overlay .text .content {
+        width: 100%;
+     }
+    }
+
+    @media (max-width:767px) {
+        .landing .overlay .text .content h2 {
+            font-size: 25px;
+        }
+    }
+
+   .landing .overlay .text .content p {
+    font-size: 12px;
+    line-height: 2;
+   }
+
+   .landing .change-background  {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #DDD;
+   }
+
+   .landing .left {
+    left: 30px;
+    font-size: 20px;
+   }
+
+   .landing .right {
+    right: 30px;
+    font-size: 20px;
+   }
+
+   .landing .bullets {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+    display: flex;
+   }
+   
+   .landing .bullets li {
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin-right: 10px;
+
+   }
+   .landing .bullets .active {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+   }
