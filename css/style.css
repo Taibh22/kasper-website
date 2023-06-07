@@ -1,6 +1,8 @@
 :root {
     --main-color: #19c8fa;
     --transperant-color:rgb(15 116 143 / 70%);
+    --color-gray:#a2a2a2;
+    --services-padding:100px;
 }
 
 * {
@@ -17,7 +19,6 @@ html {
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: black;
 }
 
 ul {
@@ -29,6 +30,50 @@ ul {
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto; 
+}
+
+.main-heading {
+  text-align: center;
+}
+
+.main-heading h2 {
+  font-weight: normal;
+  font-size: 40px;
+  position: relative;
+  margin-bottom: 70px;
+  text-transform: uppercase;
+}
+
+.main-heading h2::before{
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 2px;
+  background-color: #a2a2a2;
+  bottom: -30px;
+}
+
+.main-heading h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  border: 3px solid #777;
+  background-color: white;
+  border-radius: 50%;
+  bottom: -37px;
+
+}
+.main-heading p {
+  line-height: 1.6;
+  color: var(--color-gray);
+  width: 550px;
+  margin: 0 auto 100px;
+  max-width: 100%;
 }
 
 /* Small */
@@ -70,7 +115,7 @@ ul {
     width: calc(100% - 30px);
     height: 1px;
     position: absolute;
-    background-color: #a2a2a2;
+    background-color: var(--color-gray);
     bottom: 0;
     left: 15px;
   }
@@ -87,7 +132,7 @@ ul {
   }
 
   header .container nav .toggle-menu {
-    color: #a2a2a2;
+    color: var(--color-gray);
     font-size: 20px;
   }
 
@@ -142,7 +187,7 @@ header .container nav .toggle-menu:hover + ul {
   }
 
   header .container .form i {
-    color: #a2a2a2;
+    color: var(--color-gray);
     position: absolute;
     font-size: 20px;
     top:50%;
@@ -189,7 +234,7 @@ header .container nav .toggle-menu:hover + ul {
    .landing .overlay .text .content h2 {
     font-size: 30px;
     font-weight: normal;
-    line-height: 1.5;
+    line-height: 2;
     margin-bottom: 20px;
 
    }
@@ -248,4 +293,63 @@ header .container nav .toggle-menu:hover + ul {
    .landing .bullets .active {
     background-color: var(--main-color);
     border-color: var(--main-color);
+   }
+
+   .services {
+    padding-top: var(--services-padding);
+    padding-bottom: var(--services-padding);
+   }
+   
+   @media (min-width:768px) {
+    .services .container .services-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill , minmax(450px , 1fr) );
+      grid-column-gap: 40px;
+      grid-row-gap : 60px
+    }
+    
+   }
+
+   .services-container .services-box {
+    display: flex;
+
+   }
+
+   @media (max-width:768px) {
+    
+   .services-container .services-box {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 40px;
+   }
+    
+   }
+
+   .services-container .services-box i {
+    margin-right: 50px;
+    
+   }
+
+   @media (max-width:768px) {
+    .services-container .services-box i {
+      margin-bottom: 30px;
+    }
+
+   }
+
+   .services-container .services-box .text {
+    
+   }
+
+   .services-container .services-box .text h3 {
+    margin-bottom: 30px;
+    color: var(--main-color);
+
+   }
+
+   .services-container .services-box .text p {
+    color: #777;
+    line-height: 2;
+
    }
